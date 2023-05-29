@@ -22,6 +22,7 @@ class Installer extends LibraryInstaller
     {
         $name = explode('/', $package->getName());
         $name = end($name);
+        $name = str_replace('spbct-', '', $name);
         $name = explode('-', $name);
         $name_processed = [];
         foreach ( $name as $name_item ) {
