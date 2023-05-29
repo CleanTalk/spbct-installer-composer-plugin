@@ -1,0 +1,26 @@
+{
+  "name": "cleantalk/spbct-installer",
+  "description": "Plugin for custom installing CleanTalk Security (SPBCT) lib",
+  "type": "composer-plugin",
+  "authors": [
+    {
+      "name": "CleanTalk Team",
+      "email": "support@cleantalk.org"
+    }
+  ],
+  "license": "GPL-3.0-or-later",
+  "require": {
+    "composer-plugin-api": "*"
+  },
+  "require-dev": {
+    "composer/composer": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Cleantalk\\SpbctInstaller\\": "src/"
+    }
+  },
+  "extra": {
+    "class": "Cleantalk\\SpbctInstaller\\Plugin"
+  }
+}
