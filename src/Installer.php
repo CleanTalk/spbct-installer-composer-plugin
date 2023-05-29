@@ -12,7 +12,7 @@ class Installer extends LibraryInstaller
      */
     public function supports($packageType)
     {
-        return $packageType === 'cleantalk-spbct-lib';
+        return $packageType === 'cleantalk-spbct-lib' || $packageType === 'cleantalk-spbct-scanner';
     }
 
     /**
@@ -27,7 +27,11 @@ class Installer extends LibraryInstaller
         foreach ( $name as $name_item ) {
             $name_processed[] = ucfirst($name_item);
         }
-        return "lib/CleantalkSP/Common/" . implode('', $name_processed);
+        $path = "lib/CleantalkSP/Common/";
+        if ( $package->getType() === 'cleantalk-spbct-scanner' ) {
+            $path .= 'Scanner/';
+        }
+        return $path . implode('', $name_processed);
     }
 
 }
